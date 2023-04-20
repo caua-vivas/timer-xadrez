@@ -10,9 +10,9 @@ public class Partida {
 	private Counter timer2;
 	private Counter vencedor;
 	private Counter jogando;	
-	
+
 	private int tempoMaximo;
-	
+
 
 	public static Partida getInstancia(int... tempoMaximo) {
 		if(!Objects.isNull(instancia)) {
@@ -22,13 +22,13 @@ public class Partida {
 			return instancia;		
 		}
 	}	
-	
+
 	public Partida(int tempoMaximo) {
 		this.tempoMaximo = tempoMaximo;
 		this.timer1 = new Counter("Jogador 1", this.tempoMaximo);
 		this.timer2 = new Counter("Jogador 2", this.tempoMaximo);
 	}
-	
+
 	public void checarZerado(Counter timer) {
 		if(timer.getTempoAtual() == 0) {
 			if(timer.getNome().equals("Jogador 1")) {
@@ -38,7 +38,7 @@ public class Partida {
 			}
 		}
 	}
-	
+
 	public void mudarTurno() throws InterruptedException {
 		if(this.jogando.getNome().equals("Jogador 1")){
 			this.timer1.wait();
@@ -48,7 +48,7 @@ public class Partida {
 			this.timer1.notify();
 		}
 	}
-	
+
 	public void start(Counter timer) {
 		timer.start();
 	}
@@ -60,15 +60,15 @@ public class Partida {
 			e.printStackTrace();
 		}
 	}
-	
+
 	public Counter getTimer1() {
 		return  this.timer1;
 	}
-	
+
 	public Counter getTimer2() {
 		return this.timer2;
 	}
-	
+
 	public Counter getVencedor() {
 		return this.vencedor;
 	}
