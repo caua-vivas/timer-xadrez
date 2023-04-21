@@ -17,4 +17,4 @@ Guilherme Boaventura
 Guilherme Santos
 Pedro Rabelo
 
-Porém, não tivemos sucesso, não conseguimos imprimir os cronômetros na tela do JFrame de jeito nenhum, tivemos muita dificuldade.
+Porém, não tivemos sucesso, não conseguimos imprimir os cronômetros na tela do JFrame de jeito nenhum, tivemos muita dificuldade em fazer funcionar as threads.
